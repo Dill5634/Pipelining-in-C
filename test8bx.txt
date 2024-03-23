@@ -1,0 +1,6 @@
+IADD R3,R7,R9 
+STIX R5,R7,R3
+INC R3		// cannot be statically renamed
+STIX R2,R4,R3
+LDR R2,R13		//cannot be statically renamed
+END

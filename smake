@@ -1,0 +1,20 @@
+#!/bin/bash
+if [[ $1 == *.cpp ]]
+then
+echo Error: Do not use .cpp extension , rerun without .cpp 
+return
+fi
+
+clear
+rm $1 2>/dev/null
+cd code
+rm $1 2>/dev/null
+g++ -o $1 $1.cpp pipeline.cpp
+cp $1 ../$1
+cd ..
+echo "-----------------------------"
+if test -f $1; then
+    echo "Build completed ok"
+else
+echo "Build FAILED ***"
+fi
